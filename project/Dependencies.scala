@@ -30,7 +30,8 @@ object Dependencies {
   lazy val sparkDeps = Seq(
     "org.apache.spark" %% "spark-core" % spark % "provided" excludeAll(excludeNettyIo, excludeQQ),
     // Force netty version.  This avoids some Spark netty dependency problem.
-    "io.netty" % "netty-all" % netty
+    "io.netty" % "netty-all" % netty,
+    "org.lz4" % "lz4-java" % "1.4.1"
   )
 
   lazy val sparkExtraDeps = Seq(
@@ -87,6 +88,7 @@ object Dependencies {
   val repos = Seq(
     "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/",
     "sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/",
-    "spray repo" at "http://repo.spray.io"
+    "Hortonworks Repo" at "http://repo.hortonworks.com/content/repositories/releases/",
+    "Spring Plugins Repository" at "http://repo.spring.io/plugins-release/",
   )
 }

@@ -81,12 +81,12 @@ InstanceCount=10,BidPrice=2.99,Name=sparkSlave,InstanceGroupType=CORE,InstanceTy
  LOG_DIR=/mnt/var/log/spark-jobserver
  PIDFILE=spark-jobserver.pid
  JOBSERVER_MEMORY=1G
- SPARK_VERSION=1.6.0
+ SPARK_VERSION=2.3.0.2.6.5.0-292
  SPARK_HOME=/usr/lib/spark
  SPARK_CONF_DIR=/etc/spark/conf
  HADOOP_CONF_DIR=/etc/hadoop/conf
  YARN_CONF_DIR=/etc/hadoop/conf
- SCALA_VERSION=2.10.5
+ SCALA_VERSION=2.11.8
  MANAGER_JAR_FILE="$appdir/spark-job-server.jar"
  MANAGER_CONF_FILE="$(basename $conffile)"
  MANAGER_EXTRA_JAVA_OPTIONS=
