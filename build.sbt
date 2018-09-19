@@ -284,8 +284,14 @@ lazy val scoverageSettings = {
 }
 
 lazy val publishSettings = Seq(
-  licenses += ("Apache-2.0", url("http://choosealicense.com/licenses/apache/")),
-  bintrayOrganization := Some("spark-jobserver")
+  publishTo := {
+    val nexus = "https://nexus.funbox.ru/repository/"
+    if (isSnapshot.value)
+      Some("snapshots" at nexus + "maven-snapshots/")
+    else
+      Some("releases" at nexus + "maven/")
+  },
+  credentials += Credentials(Path.userHome / ".sbt" / "credentials")
 )
 
 // This is here so we can easily switch back to Logback when Spark fixes its log4j dependency.
